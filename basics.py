@@ -14,3 +14,31 @@ for i in range(9):
 l = []
 exec("for i in range(9): l.append(i)")
 print(l)
+
+
+#Load listdir to create directory lists
+from os import listdir                  #directory list
+from os.path import isfile, join    # only files list
+import glob
+import os
+
+mypath = "C:\Users\PC-600\Dropbox (Farmers Edge)\MuriloVianna\DB\SoilDB\ISRIC\ISRIC_250m\costumers\centroids"
+fls = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
+thisdir = os.getcwd()
+
+pt = mypath + "\*.shp"
+
+ls = os.listdir(mypath)
+
+mypath = "C:\Users\PC-600\Dropbox (Farmers Edge)\MuriloVianna\DB\SoilDB\ISRIC\ISRIC_250m"
+
+for r, d, f in os.walk(mypath):
+    for file in f:
+        if ".shp" in file:
+            print(os.path.join(r, file))
+
+
+print(glob.glob("*.shp"))
+
+filenames = next(os.walk(mypath))[2]
