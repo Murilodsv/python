@@ -3,8 +3,6 @@
 #-------------------------------------#
 
 #--- Read a project
-
-
 #--- Add Layers to (addVectorLayer)
 #--- Path and name
 loc = "C:\Users\PC-600\Dropbox (Farmers Edge)\MuriloVianna\DB\SoilDB\ISRIC\ISRIC_250m\costumers\centroids\centroids_v1.shp"
@@ -33,4 +31,31 @@ iface.addRasterLayer(fileName, "raster")
 
 #--- Add layer to project
 QgsProject.instance().addMapLayer(vlayer)
+
+
+#------------------------------------------------------------------------------------------------
+#----------------------------------------#
+#--- Load processing tools to console ---#
+#----------------------------------------#
+
+#Load processing algorithms
+import processing
+
+#List of algorithm within processing
+processing. alglist()
+
+#Points related algorithms
+processing.alglist("point")
+
+#Processing tool example
+processing.alghelp("saga:slopeaspectcurvature")
+
+#Processing especification from polygon centroids
+processing.alghelp("saga:polygoncentroids")
+
+#ALGORITHM: Polygon centroids
+#   POLYGONS <ParameterVector>
+#   METHOD          <ParameterBoolean>
+#   CENTROIDS <OutputVector>
+
 
