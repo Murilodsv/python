@@ -58,4 +58,18 @@ processing.alghelp("saga:polygoncentroids")
 #   METHOD          <ParameterBoolean>
 #   CENTROIDS <OutputVector>
 
+processing.algoptions("saga:polygoncentroids")
 
+#--- Load a shapefile
+wd = "C:/Users/PC-600/Dropbox (Farmers Edge)/MuriloVianna/DB/SoilDB/ISRIC/ISRIC_250m/costumers"
+fn = "BLDFIE_M_sl1_250m_NA_ChapadaodaAtlantica_Subfield1972585_Zoning87346_NIR_NB_20150806.shp"
+
+layer = QgsVectorLayer(wd + "/" + fn, "shp1","ogr")
+
+#--- run centroids
+alg = "saga:polygoncentroids"   #algorithms name
+out = "c:/Murilo/cen"                #output
+cen = processing.runalg("saga:polygoncentroids", layer, 1, out)
+
+#Add to project
+cen1 = iface.addVectorLayer(cen['CENTROIDS'], "SHPCEN1", "ogr")
