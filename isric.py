@@ -83,8 +83,8 @@ for ly_zs in input_lys:
         tif,                                            #GRIDS
         1,                                              #METHOD
         ly_zs,                                          #SHAPES
-        tifname[n][0:2]+"_"+tifname[n][9:12],
-        1,
-        wd_izs+"/"+tifname[n][0:12]+"_"+filename[i])
+        tifname[n][0:2]+"_"+tifname[n][9:12],           #FIELD PREFIX LAB
+        1,                                              #LOAD TIF
+        wd_izs+"/"+tifname[n][0:12]+"_"+filename[i])    #OUTPUT
         n = n + 1
     i = i + 1
