@@ -58,11 +58,11 @@ for  r, d, f in os.walk(wd_t):
 #--- Extract raster values to points
 output_isric = []
 i = 0
-for ly_c in input_lys_c[1,3,1]:
+for ly_c in input_lys_c:
     processing.runalg("saga:addgridvaluestopoints",		#Algorithm
     ly_c,																		#SHAPES
     input_tif,																#GRIDS
     0,																			#RESAMPLING([0] Nearest Neighbor, [1] Bilinear Interpolation,[2] Inverse Distance Interpolation,[3] Bicubic Spline Interpolation,[4] B-Spline Interpolation)
     3,																			#_RESAMPLING([0] Nearest Neighbor, [1] Bilinear Interpolation,[2] Bicubic Spline Interpolation,[3] B-Spline Interpolation)
-    wd_i+"/ISRIC4_"+filename_c[i])							#RESULT    
+    wd_i+"/ISRIC250m_"+filename_c[i])						#RESULT
     i = i + 1
