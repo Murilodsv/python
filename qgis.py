@@ -32,6 +32,9 @@ iface.addRasterLayer(fileName, "raster")
 #--- Add layer to project
 QgsProject.instance().addMapLayer(vlayer)
 
+#--- Add layer to project
+QgsMapLayerRegistry.instance().addMapLayer(vlayer)
+
 
 #------------------------------------------------------------------------------------------------
 #----------------------------------------#
