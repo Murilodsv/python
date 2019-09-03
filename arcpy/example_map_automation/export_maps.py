@@ -7,14 +7,15 @@
 
 #--- Rationale:
 #--- Get properties from pre-existent mxd file
-#--- List all data layers contained in ~/data/ for map creation
+#--- Read CSV file with automation control
 #--- Add layers to the mxd project
 #--- Classify layers with a template
 #--- Modify text in layout view
-#--- Export maps as image (e.g. PNG)
+#--- Export maps as image (e.g. PNG) to folder ~/maps/
 
 #--- Required Data:
 #--- mxd project file with layout view and background layers (e.g. borders, rivers, ocean, etc...)
+#--- CSV file "export_map.csv" with paramters of automation
 #--- Place all files to be exported into ~/data/
 
 #--- Contact:
