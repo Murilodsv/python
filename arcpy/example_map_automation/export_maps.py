@@ -45,7 +45,6 @@ nmaps = range(len(csv_ctrl))
 #--- Loop
 for i in nmaps:
 	#--- Get iteration info:
-	id_i 	= csv_ctrl['ID'][i]
 	fn_i 	= csv_ctrl['filedata'][i]
 	tn_i 	= csv_ctrl['template'][i]
 	t1_i 	= csv_ctrl['texto 1'][i]

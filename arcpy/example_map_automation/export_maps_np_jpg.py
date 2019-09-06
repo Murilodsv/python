@@ -134,8 +134,8 @@ for i in nmaps:
 	arcpy.RefreshTOC()
 	arcpy.RefreshActiveView()
 	
-	#--- Export Map in PNG format
-	arcpy.mapping.ExportToPNG(mxd, mxdp+"maps\\"+on)
+	#--- Export Map in JPEG format
+	arcpy.mapping.ExportToJPEG(mxd, mxdp+"maps\\"+on)
 	
 	#--- Remove layer
 	arcpy.mapping.RemoveLayer(mxddf, nlyr)
