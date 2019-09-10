@@ -38,6 +38,8 @@ csv_ctrl_fn = mxdp+"export_map.csv"
 
 fn_i 	= []
 tn_i 	= []
+ln_i    = []
+rl_i    = []
 t1_i 	= []
 t2_i 	= []
 t3_i 	= []
@@ -56,13 +58,15 @@ with open(csv_ctrl_fn) as csvfile:
 		#--- read line-by-line		
 		fn_i_r 	= row[0]
 		tn_i_r 	= row[1]
-		t1_i_r 	= row[2]
-		t2_i_r 	= row[3]
-		t3_i_r 	= row[4]
-		t4_i_r 	= row[5]
-		t5_i_r 	= row[6]
-		t6_i_r 	= row[7]
-		on_i_r 	= row[8]
+		ln_i_r 	= row[2]
+		rl_i_r 	= row[3]
+		t1_i_r 	= row[4]
+		t2_i_r 	= row[5]
+		t3_i_r 	= row[6]
+		t4_i_r 	= row[7]
+		t5_i_r 	= row[8]
+		t6_i_r 	= row[9]
+		on_i_r 	= row[10]
 		
 		if skip_head:
 			#--- Skip header
@@ -71,6 +75,8 @@ with open(csv_ctrl_fn) as csvfile:
 			#--- append					
 			fn_i.append(fn_i_r)
 			tn_i.append(tn_i_r)
+			ln_i.append(ln_i_r)
+			rl_i.append(rl_i_r)
 			t1_i.append(t1_i_r)
 			t2_i.append(t2_i_r)
 			t3_i.append(t3_i_r)
@@ -88,6 +94,8 @@ for i in nmaps:
 	#--- Get iteration info:	
 	fn = fn_i[i]
 	tn = tn_i[i]
+	ln = ln_i[i]
+	rl = rl_i[i]
 	t1 = t1_i[i]
 	t2 = t2_i[i]
 	t3 = t3_i[i]
@@ -105,8 +113,21 @@ for i in nmaps:
 	#--- Classify layer with template
 	arcpy.mapping.UpdateLayer(mxddf,nlyr,tlyr, symbology_only = True)
 	
+	#--- Re-name layer
+	nlyr.name = ln
+	
 	#--- Add Layer to mxd project
-	arcpy.mapping.AddLayer(mxddf, nlyr)
+	arcpy.mapping.AddLayer(mxddf, nlyr)	
+	
+	#--- Re-order to layer reference
+	for lyr in arcpy.mapping.ListLayers(mxd, "", mxddf):
+		if lyr.name.lower() == nlyr.name.lower():
+			moveLayer = lyr
+		if lyr.name.lower() == rl.lower():
+			refLayer = lyr
+	
+	#--- Move layer to above reference layer
+	arcpy.mapping.MoveLayer(mxddf, refLayer, moveLayer, "BEFORE")	
 	
 	#--- List texts
 	l_txt = arcpy.mapping.ListLayoutElements(mxd,"TEXT_ELEMENT")
