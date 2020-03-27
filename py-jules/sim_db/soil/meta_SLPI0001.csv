@@ -37,7 +37,7 @@ const_val,<const_val>,ancillaries.nml,jules_soil_props,real,T,7,4,0,0.6278
 const_val,<const_val>,ancillaries.nml,jules_soil_props,real,T,8,4,0,0.4782
 const_val,<const_val>,ancillaries.nml,jules_soil_props,real,T,9,4,0,0.133
 const_z,<const_z>,ancillaries.nml,jules_soil_props,logical,F,1,0,0,T
-file,<file>,ancillaries.nml,jules_soil_props,character,F,1,0,0,data/SLPI0001.dat'
+file,<file>,ancillaries.nml,jules_soil_props,character,F,1,0,0,'data/SLPI0001.dat'
 nvars,<nvars>,ancillaries.nml,jules_soil_props,integer,F,1,0,0,9
 tpl_name,<tpl_name>,ancillaries.nml,jules_soil_props,character,T,1,0,0,''
 tpl_name,<tpl_name>,ancillaries.nml,jules_soil_props,character,T,2,0,0,''
