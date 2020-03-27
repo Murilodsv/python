@@ -143,7 +143,7 @@ for run_id in dash_run['run_id']:
     
     #--- Generate CO2 data
     if verb: print('Generating CO2 Data for ID: '+run_id)
-    gd.gen_co2_dat(co2_data_fn.replace('.dat','.csv'),
+    gd.gen_co2_dat(wd+'/sim_db/ancillary/'+co2_data_fn.replace('.dat','.csv'),
                    wd+'/jules_run/namelists/data/'+co2_data_fn,
                    var    = 'co2')
     
