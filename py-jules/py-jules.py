@@ -171,6 +171,7 @@ for run_id in dash_run['run_id']:
     
     #--- Prepare running args    
     run_args = ['cd '+wd+'/jules_run/namelists/',               # get into run folder
+                'chmod +x '+exec_fn,                            # allow executable permission
                 'module swap PrgEnv-cray PrgEnv-cray/5.2.40',   # swap module for jules
                 'module load cray-netcdf-hdf5parallel/4.3.2',   # load module for jules
                 'module load cray-snplauncher/7.0.4',           # load module for jules 
