@@ -11,7 +11,7 @@ file,<file>,initial_conditions.nml,jules_initial,character,F,1,0,0,'data/initial
 latitude,<latitude>,model_grid.nml,jules_latlon,real,F,1,4,0,-22.698538
 longitude,<longitude>,model_grid.nml,jules_latlon,real,F,1,4,0,-47.642881
 run_id,<run_id>,output.nml,jules_output,character,F,1,0,0,'MZ0002'
-output_start,<output_start>,output.nml,jules_output_profile,character,F,1,0,3,'2018-11-01 00:00:00'
+output_start,<output_start>,output.nml,jules_output_profile,character,F,1,0,3,'2017-11-01 00:00:00'
 data_end,<data_end>,prescribed_data.nml,jules_prescribed_dataset,character,F,1,0,0,'2020-12-31 00:00:00'
 data_period,<data_period>,prescribed_data.nml,jules_prescribed_dataset,integer,F,1,0,0,-2
 data_start,<data_start>,prescribed_data.nml,jules_prescribed_dataset,character,F,1,0,0,'1980-01-01 00:00:00'
@@ -24,7 +24,7 @@ tpl_name,<tpl_name>,prescribed_data.nml,jules_prescribed_dataset,character,F,1,0
 var,<var>,prescribed_data.nml,jules_prescribed_dataset,character,F,1,0,0,'co2_mmr'
 var_name,<var_name>,prescribed_data.nml,jules_prescribed_dataset,character,F,1,0,0,'co2_mmr'
 l_360,<l_360>,timesteps.nml,jules_time,logical,F,1,0,0,.false.
-main_run_end,<main_run_end>,timesteps.nml,jules_time,character,F,1,0,0,'2019-04-30 06:00:00'
-main_run_start,<main_run_start>,timesteps.nml,jules_time,character,F,1,0,0,'2018-09-01 06:00:00'
+main_run_end,<main_run_end>,timesteps.nml,jules_time,character,F,1,0,0,'2018-04-30 06:00:00'
+main_run_start,<main_run_start>,timesteps.nml,jules_time,character,F,1,0,0,'2017-09-01 06:00:00'
 print_step,<print_step>,timesteps.nml,jules_time,integer,F,1,0,0,48
 timestep_len,<timestep_len>,timesteps.nml,jules_time,integer,F,1,0,0,3600
