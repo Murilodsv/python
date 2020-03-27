@@ -23,7 +23,7 @@ def mk_jules_run(wd:str):
     #--- Erase old data
     try:
         if os.path.exists(wd+'/'+'jules_run'): os.remove(wd+'/'+'jules_run')
-    except PermissionError:
+    except:
         import shutil
         shutil.rmtree(wd+'/'+'jules_run')
             

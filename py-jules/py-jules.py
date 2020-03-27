@@ -16,8 +16,6 @@ save_all= False
 verb    = True
 exec_fn = 'jules.exe'
 
-wd = 'C:/Murilo/CSSP-Brazil/MONSooN/namelist_template/py-jules'
-
 #----------------------#
 #--- Load functions ---#
 #----------------------#
