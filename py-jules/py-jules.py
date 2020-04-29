@@ -13,6 +13,7 @@ from subprocess import run
 dash_nm = 'dashboard_db.csv'
 wd      = os.getcwd()
 save_all= False
+ext_csv = True
 verb    = True
 exec_fn = 'jules.exe'
 
@@ -181,3 +182,6 @@ for run_id in dash_run['run_id']:
     if verb: print('Running JULES for ID: '+run_id)
     run("; ".join(run_args), shell = True)
    
+    #--- Read CSV?
+    if ext_csv:
+        
